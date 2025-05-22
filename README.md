@@ -63,6 +63,67 @@ climinha-backend/
 └── README.md
 ```
 
+## 📡 Rotas da API
+
+### `GET /leituras`
+
+Retorna todas as leituras registradas.
+
+#### Exemplo:
+
+```http request
+GET /leituras HTTP/1.1
+Host: localhost:3000
+```
+
+#### Resposta:
+
+```json
+[
+  {
+    "timestamp": "2025-05-24T14:32:05.000Z",
+    "temp": 21.1
+  },
+  "..."
+]
+```
+
+---
+
+### `POST /leituras`
+
+Recebe um array de leituras de temperatura.
+
+#### Exemplo:
+
+```http request
+POST /leituras HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+```
+#### Body:
+```json
+{
+  "leituras": [
+    { "timestamp": "2025-05-24T14:32:05Z", "temp": 21.1 },
+    { "timestamp": "2025-05-24T14:32:10Z", "temp": 20.1 },
+    { "timestamp": "2025-05-24T14:32:15Z", "temp": 22.1 },
+    { "timestamp": "2025-05-24T14:32:20Z", "temp": 23.1 },
+    { "timestamp": "2025-05-24T14:32:25Z", "temp": 25.1 },
+    { "timestamp": "2025-05-24T14:32:30Z", "temp": 18.1 }
+  ]
+}
+```
+
+#### Resposta:
+
+```json
+{
+  "message": "Leituras salvas com sucesso!",
+  "validCount": 6
+}
+```
+
 ## 📌 Observações
 
 * Este projeto usa SQLite para facilitar o desenvolvimento local.
