@@ -26,3 +26,7 @@ prisma/migrations/
 # OS-specific files
 .DS_Store
 Thumbs.db
+/.idea/dataSources.xml
+/prisma/database/dev.db
+/.idea/git_toolbox_prj.xml
+/.idea/sqldialects.xml
